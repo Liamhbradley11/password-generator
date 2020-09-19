@@ -39,23 +39,25 @@ function generatePassword () {
         alert("Please select at least one character.");
         return;   
         }
+
+      var passwordValue = [];
+
+// The concat() method is used to join two or more arrays
+      if (uppercase) {
+        passwordValue = passwordValue.concat(uppercaseChar);
+      }
+      if (lowercase) {
+        passwordValue = passwordValue.concat(lowercaseChar);
+      }
+      if (specialcharacters) {
+        passwordValue = passwordValue.concat(specialChar);
+      }
+      if (numbers) {
+        passwordValue = passwordValue.concat(numbersChar);
+      }
+
     }
   
-
-
-    // }
-    //   var uppercase = confirm("Do you want uppercase letters?");
-    //   var lowercase = comnfirm("Do you want lowercase letters");
-    //   var specialcharacters = confirm("Do you want special characters?");
-    //   var numbers = confirm("Do you want numbers?");
-
-    // while (uppercase === false && lowercase === false && specialcharacters === false && numbers === false){
-      // alert("Please choose at least one character type.")
-      // var uppercase = confirm("Do you want uppercase letters?");
-      // var lowercase = comnfirm("Do you want lowercase letters");
-      // var specialcharacters = confirm("Do you want special characters?");
-      // var numbers = confirm("Do you want numbers?");
- 
 
     
 
