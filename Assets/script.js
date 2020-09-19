@@ -29,10 +29,9 @@ function generatePassword () {
   }
     else {
       passwordLength = parseInt(
-        alert("Invalid. Please try again.")
-      )
+        alert("Invalid. Please try again."));
     }
-    }
+  }
       var uppercase = confirm("Do you want uppercase letters?");
       var lowercase = confirm("Do you want lowercase letters");
       var specialcharacters = confirm("Do you want special characters?");
@@ -67,7 +66,7 @@ function generatePassword () {
         }
 
       for (var i = 0; i <passwordLength; i++){       
-         passwordRandom = passwordRandom + passwordValue[Math.floor(Math.random() * passwordValue.passwordLength)]
+         passwordRandom = passwordRandom + passwordValue[Math.floor(Math.random() * passwordValue.length)]
       }
       return passwordRandom;
     }
