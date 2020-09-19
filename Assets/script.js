@@ -26,7 +26,6 @@ function generatePassword () {
     else if (passwordLength > 128) {
       passwordLength = parseInt(
         alert("Invalid. Please try again."));
-        var uppercase = confirm("Do you want uppercase letters?");
         return; }
     }
       var uppercase = confirm("Do you want uppercase letters?");
@@ -35,12 +34,18 @@ function generatePassword () {
       var numbers = confirm("Do you want numbers?");
     
       while (uppercase === false && lowercase === false && specialcharacters === false && numbers === false){
-        alert("Please select at least one character.");  
+        alert("Please select at least one character."); 
+        var uppercase = confirm("Do you want uppercase letters?");
+        var lowercase = confirm("Do you want lowercase letters");
+        var specialcharacters = confirm("Do you want special characters?");
+        var numbers = confirm("Do you want numbers?");  
       }
 
 // empty variables
       var passwordValue = [];
-      var passwordRandom = [];
+      var passwordRandom = "";
+
+
 
 // The concat() method is used to join two or more arrays
       if (uppercase) {
@@ -56,19 +61,14 @@ function generatePassword () {
         passwordValue = passwordValue.concat(numbersChar);
         }
 
-      for (var i = 0; i <passwordLength; i++){
-        var randomInt = Math.floor(Math.random() * passwordValue.passwordLength);
-        passwordRandom = passwordRandom + passwordValue[randomInt];
+      for (var i = 0; i <passwordLength; i++){       
+         passwordRandom = passwordRandom + passwordValue[Math.floor(Math.random() * passwordValue.passwordLength)]
       }
       return passwordRandom;
     }
-
-    function randomPassword(passarray) {
-      var indexRandom = Math.floor(Math.random() * passarray.passwordLength);
-      var RandomElement = passarray[indexRandom];
+ 
       
-      return RandomElement;
-    }
+  
 
 function writePassword() {
   
