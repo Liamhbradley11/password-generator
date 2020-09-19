@@ -14,25 +14,52 @@ var passwordLength = parseInt("");
 
 
 function generatePassword () {
+  // the parseInt function converts its first argument to a string, parses that string
   var passwordLength = parseInt(prompt("Please choose between 8 and 128 characters!"));
-  // alert if provided a number <8 and >128
-    if(passwordLength < 8 || passwordLength > 128){
-      alert("Invalid. Please try again.")
+  // alert if provided a number <8 and >128 // then returns an integer or NaN . If not NaN , the return value will be the integer that is the first argument taken as a number in the specified radix
+    while(passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)){
+      if (passwordLength < 8) {
+        passwordLength = parseInt(
+          alert("Invalid. Please try again.")
+        );
+      }
+    else if (passwordLength > 128) {
+      passwordLength = parseInt(
+        alert("Invalid. Please try again."));
+        var uppercase = confirm("Do you want uppercase letters?");
+        return; }
     }
-    else {
-    var uppercase = confirm("Do you want uppercase letters?");
-    var lowercase = comnfirm("Do you want lowercase letters");
-    var specialcharacters = confirm("Do you want special characters?");
-    var numbers = confirm("Do you want numbers?");
+      var uppercase = confirm("Do you want uppercase letters?");
+      var lowercase = confirm("Do you want lowercase letters");
+      var specialcharacters = confirm("Do you want special characters?");
+      var numbers = confirm("Do you want numbers?");
+    
+      if (uppercase === false && lowercase === false && specialcharacters === false && numbers === false)
+      {
+        alert("Please select at least one character.");
+        return;   
+        }
     }
-    if (uppercase === false && lowercase === false && specialcharacters === false && numbers === false){
-      alert("choose at least one character!")
-    }
-  }
+  
+
+
+    // }
+    //   var uppercase = confirm("Do you want uppercase letters?");
+    //   var lowercase = comnfirm("Do you want lowercase letters");
+    //   var specialcharacters = confirm("Do you want special characters?");
+    //   var numbers = confirm("Do you want numbers?");
+
+    // while (uppercase === false && lowercase === false && specialcharacters === false && numbers === false){
+      // alert("Please choose at least one character type.")
+      // var uppercase = confirm("Do you want uppercase letters?");
+      // var lowercase = comnfirm("Do you want lowercase letters");
+      // var specialcharacters = confirm("Do you want special characters?");
+      // var numbers = confirm("Do you want numbers?");
+ 
+
     
 
 
- //--> wont work here // while(uppercase === false && lowercase === false && specialcharacters === false && numbers === false)
 
 function writePassword() {
   
@@ -40,22 +67,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 // prompt user to choose how many charcaters
   passwordText.value = password;
-
-
-
-
-  // var passwordLength = prompt("Please choose between 8 and 128 characters!");
-// alert if provided a number <8 and >128
-  // if(passwordLength < 8 || passwordLength > 128){
-  //   alert("Invalid. Please try again.")
-  //   return;
-  }
-  // confirm each variable 
-  // var uppercase = confirm("Do you want uppercase letters?");
-  // var lowercase = comnfirm("Do you want lowercase letters");
-  // var specialcharacters = confirm("Do you want special characters?");
-  // var numbers = confirm("Do you want numbers?");
-
+}
 
 
 
