@@ -26,7 +26,12 @@ function generatePassword () {
     else if (passwordLength > 128) {
       passwordLength = parseInt(
         alert("Invalid. Please try again."));
-        return; }
+  }
+    else {
+      passwordLength = parseInt(
+        alert("Invalid. Please try again.")
+      )
+    }
     }
       var uppercase = confirm("Do you want uppercase letters?");
       var lowercase = confirm("Do you want lowercase letters");
