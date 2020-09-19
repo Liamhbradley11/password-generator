@@ -34,13 +34,13 @@ function generatePassword () {
       var specialcharacters = confirm("Do you want special characters?");
       var numbers = confirm("Do you want numbers?");
     
-      if (uppercase === false && lowercase === false && specialcharacters === false && numbers === false)
-      {
-        alert("Please select at least one character.");
-        return;   
-        }
+      while (uppercase === false && lowercase === false && specialcharacters === false && numbers === false){
+        alert("Please select at least one character.");  
+      }
 
+// empty variables
       var passwordValue = [];
+      var passwordRandom = [];
 
 // The concat() method is used to join two or more arrays
       if (uppercase) {
@@ -54,14 +54,21 @@ function generatePassword () {
       }
       if (numbers) {
         passwordValue = passwordValue.concat(numbersChar);
+        }
+
+      for (var i = 0; i <passwordLength; i++){
+        var randomInt = Math.floor(Math.random() * passwordValue.passwordLength);
+        passwordRandom = passwordRandom + passwordValue[randomInt];
       }
-
+      return passwordRandom;
     }
-  
 
-    
-
-
+    function randomPassword(passarray) {
+      var indexRandom = Math.floor(Math.random() * passarray.passwordLength);
+      var RandomElement = passarray[indexRandom];
+      
+      return RandomElement;
+    }
 
 function writePassword() {
   
@@ -71,7 +78,8 @@ function writePassword() {
   passwordText.value = password;
 }
 
-
+ // passwordRandom = passwordRandom + passwordValue[
+ //   Math.floor(Math.random() * passwordValue.passwordLength)
 
 
 // Add event listener to generate button
